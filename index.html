@@ -21,12 +21,7 @@
                 </div>
                 <span>N4MCHA</span>
             </div>
-            
-            <div class="menu-toggle" id="mobile-menu">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-
-            <div class="nav-links" id="nav-links">
+            <div class="nav-links">
                 <a href="#home" class="nav-item active"><i class="fa-solid fa-house"></i> Home</a>
                 <a href="#about" class="nav-item"><i class="fa-solid fa-user"></i> About</a>
                 <a href="#social" class="nav-item"><i class="fa-solid fa-share-nodes"></i> Social</a>
@@ -45,6 +40,9 @@
             </div>
             <div class="hero-avatar reveal-right">
                 <div class="avatar-glow">
+                    
+                    <i class="fa-solid fa-crown hologram-crown"></i>
+                    
                     <div class="avatar-main">
                         <img src="profil.jpg" alt="Foto Profil">
                     </div>
@@ -66,7 +64,6 @@
                     <span class="tag"><i class="fa-solid fa-user icon-blue"></i> Name: N4MCHA</span>
                     <span class="tag"><i class="fa-solid fa-location-dot icon-blue"></i> Location: Indonesia</span>
                     <span class="tag"><i class="fa-solid fa-code icon-blue"></i> Status: Developer</span>
-                    <span class="tag"><i class="fa-solid fa-headphones icon-blue"></i> Hobby: Listening to music</span>
                 </div>
             </section>
 
@@ -158,23 +155,7 @@
     </div>
 
     <script>
-        // 1. HAMBURGER MENU LOGIC
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinksContainer = document.getElementById('nav-links');
-        const menuIcon = mobileMenu.querySelector('i');
-
-        mobileMenu.addEventListener('click', () => {
-            navLinksContainer.classList.toggle('active');
-            if(navLinksContainer.classList.contains('active')) {
-                menuIcon.classList.remove('fa-bars');
-                menuIcon.classList.add('fa-xmark');
-            } else {
-                menuIcon.classList.remove('fa-xmark');
-                menuIcon.classList.add('fa-bars');
-            }
-        });
-
-        // 2. SCROLL SPY (Menu presisi tidak nyala barengan)
+        // 1. SCROLL SPY (Navigasi Aktif Otomatis yang Presisi)
         const sections = document.querySelectorAll('.section-scroll');
         const navLinks = document.querySelectorAll('.nav-links a');
 
@@ -195,20 +176,16 @@
             });
         });
 
-        // 3. KLIK MENU ACTIVE & TUTUP DROPDOWN
+        // 2. KLIK MENU ACTIVE
         const navItems = document.querySelectorAll('.nav-links .nav-item');
         navItems.forEach(item => {
             item.addEventListener('click', function() {
                 navItems.forEach(nav => nav.classList.remove('active'));
                 this.classList.add('active');
-                
-                navLinksContainer.classList.remove('active');
-                menuIcon.classList.remove('fa-xmark');
-                menuIcon.classList.add('fa-bars');
             });
         });
 
-        // 4. ANIMASI SAAT SCROLL BAWAH
+        // 3. ANIMASI SAAT SCROLL BAWAH
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
