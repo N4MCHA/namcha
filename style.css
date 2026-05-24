@@ -3,6 +3,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* MENGHILANGKAN KOTAK BIRU SAAT DIKETUK DI HP */
+    -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -16,8 +18,13 @@ body {
     background-attachment: fixed;
     color: #e2e8f0;
     overflow-x: hidden;
-    padding: 20px 20px 80px 20px; /* Ditambah padding bawah agar space footer pas */
+    padding: 20px 20px 80px 20px;
     position: relative;
+}
+
+/* MENGHILANGKAN GARIS FOKUS/OUTLINE PADA TOMBOL SAAT DIKLIK */
+a:focus, button:focus {
+    outline: none;
 }
 
 .background-overlay {
@@ -45,7 +52,12 @@ body {
     border: 1px solid rgba(0, 150, 255, 0.15);
     border-radius: 16px;
     padding: 24px;
-    margin-bottom: 30px; /* Jarak antar bagian dikunci 30px */
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.glass-card:hover {
+    border-color: rgba(0, 150, 255, 0.4);
 }
 
 /* --- NAVBAR --- */
@@ -275,10 +287,6 @@ body {
     gap: 20px;
 }
 
-.skill-item {
-    margin-bottom: 10px;
-}
-
 .skill-info {
     display: flex;
     justify-content: space-between;
@@ -308,9 +316,9 @@ body {
     border-radius: 10px;
 }
 
-/* --- SOCIAL MEDIA SECTION (FIX TAMPILAN) --- */
+/* --- SOCIAL MEDIA SECTION --- */
 .social-section {
-    display: block; /* Mengunci agar footer dirender utuh */
+    display: block;
     width: 100%;
     clear: both;
 }
@@ -338,7 +346,7 @@ body {
 .social-bar:hover {
     background: rgba(0, 150, 255, 0.08);
     border-color: rgba(0, 150, 255, 0.5);
-    transform: translateY(-2px);
+    transform: translateY(-5px);
 }
 
 .soc-left {
@@ -376,6 +384,42 @@ body {
     color: #00d2ff;
     font-size: 1rem;
 }
+
+/* ========================================================
+   ANIMASI ELEGAN UNTUK AWAL BUKA WEB & SCROLL BAWAH/ATAS
+   ======================================================== */
+
+/* State awal (sebelum di-scroll / sebelum muncul) */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(60px);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal-top {
+    opacity: 0;
+    transform: translateY(-40px);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Class 'show' akan ditambahkan oleh Javascript saat elemen masuk layar */
+.show {
+    opacity: 1;
+    transform: translate(0);
+}
+
 
 /* --- RESPONSIVE MEDIA QUERIES (HP POTRAIT) --- */
 @media (max-width: 768px) {

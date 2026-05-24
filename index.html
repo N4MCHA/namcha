@@ -10,11 +10,11 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body id="home">
+<body>
     <div class="background-overlay"></div>
     <div class="container">
         
-        <nav class="navbar">
+        <nav class="navbar reveal-top">
             <div class="logo">
                 <div class="avatar-mini">
                     <img src="profil.jpg" alt="Avatar Mini">
@@ -28,8 +28,8 @@
             </div>
         </nav>
 
-        <header class="hero">
-            <div class="hero-text">
+        <header id="home" class="hero section-scroll">
+            <div class="hero-text reveal-left">
                 <span class="subtitle">WELCOME TO MY WORLD</span>
                 <h1 class="main-title">N4MCHA</h1>
                 <h3 class="tagline">Code. Create. Inspire.</h3>
@@ -38,7 +38,7 @@
                 </p>
                 <a href="#about" class="btn-explore nav-item">Explore More <i class="fa-solid fa-arrow-right"></i></a>
             </div>
-            <div class="hero-avatar">
+            <div class="hero-avatar reveal-right">
                 <div class="avatar-glow">
                     <div class="avatar-main">
                         <img src="profil.jpg" alt="Foto Profil">
@@ -49,7 +49,7 @@
         </header>
 
         <main class="content-grid">
-            <section id="about" class="card glass-card dynamic-height">
+            <section id="about" class="card glass-card dynamic-height section-scroll reveal-up">
                 <div class="card-header">
                     <i class="fa-solid fa-user-tie icon-blue"></i>
                     <h2>ABOUT ME</h2>
@@ -64,7 +64,7 @@
                 </div>
             </section>
 
-            <section class="card glass-card">
+            <section class="card glass-card reveal-up" style="transition-delay: 0.2s;">
                 <div class="card-header">
                     <i class="fa-solid fa-code icon-blue"></i>
                     <h2>SKILLS</h2>
@@ -102,7 +102,7 @@
             </section>
         </main>
 
-        <footer id="social" class="social-section glass-card">
+        <footer id="social" class="social-section glass-card section-scroll reveal-up">
             <div class="card-header">
                 <i class="fa-solid fa-share-nodes icon-blue"></i>
                 <h2>SOCIAL MEDIA</h2>
@@ -134,13 +134,45 @@
     </div>
 
     <script>
-        const navItems = document.querySelectorAll('.nav-links .nav-item');
-        navItems.forEach(item => {
-            item.addEventListener('click', function() {
-                navItems.forEach(nav => nav.classList.remove('active'));
-                this.classList.add('active');
+        // 1. SCROLL SPY (Update Menu Otomatis Saat Di-Scroll)
+        const sections = document.querySelectorAll('.section-scroll');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                // Angka 150 adalah toleransi jarak dari atas layar
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
             });
         });
+
+        // 2. ANIMASI SAAT SCROLL (Intersection Observer)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // Tambahkan class show saat elemen masuk layar
+                    entry.target.classList.add('show');
+                } else {
+                    // Hapus class show saat elemen keluar layar agar bisa dianimasikan ulang saat scroll atas/bawah
+                    entry.target.classList.remove('show');
+                }
+            });
+        }, { threshold: 0.1 }); // Akan bereaksi ketika 10% bagian elemen sudah terlihat
+
+        // Terapkan ke semua elemen yang punya class reveal
+        const hiddenElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-top');
+        hiddenElements.forEach((el) => observer.observe(el));
     </script>
 </body>
 </html>
