@@ -287,6 +287,10 @@ a:focus, button:focus {
     gap: 20px;
 }
 
+.skill-item {
+    margin-bottom: 10px;
+}
+
 .skill-info {
     display: flex;
     justify-content: space-between;
@@ -389,7 +393,6 @@ a:focus, button:focus {
    ANIMASI ELEGAN UNTUK AWAL BUKA WEB & SCROLL BAWAH/ATAS
    ======================================================== */
 
-/* State awal (sebelum di-scroll / sebelum muncul) */
 .reveal-up {
     opacity: 0;
     transform: translateY(60px);
@@ -414,7 +417,7 @@ a:focus, button:focus {
     transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* Class 'show' akan ditambahkan oleh Javascript saat elemen masuk layar */
+/* Class 'show' ditambahkan oleh Javascript */
 .show {
     opacity: 1;
     transform: translate(0);
