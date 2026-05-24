@@ -5,20 +5,18 @@
     box-sizing: border-box;
 }
 
-/* MENAMBAHKAN FITUR SMOOTH SCROLL (WAJIB BUAT NAVIGASI) */
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Jarak agar content gak ketutupan navbar saat scroll */
+    scroll-padding-top: 100px;
 }
 
 body {
-    /* MEMASTIKAN FONT UTAMA POPPINS */
     font-family: 'Poppins', sans-serif;
     background: radial-gradient(circle at center, #0a1128 0%, #020617 100%);
     background-attachment: fixed;
     color: #e2e8f0;
     overflow-x: hidden;
-    padding: 20px;
+    padding: 20px 20px 80px 20px; /* Ditambah padding bawah agar space footer pas */
     position: relative;
 }
 
@@ -39,7 +37,7 @@ body {
     width: 100%;
 }
 
-/* --- GLASSMORPHISM TEMPLATE --- */
+/* --- GLASSMORPHISM CARD TEMPLATE --- */
 .glass-card {
     background: rgba(255, 255, 255, 0.02);
     backdrop-filter: blur(12px);
@@ -47,13 +45,7 @@ body {
     border: 1px solid rgba(0, 150, 255, 0.15);
     border-radius: 16px;
     padding: 24px;
-    margin-bottom: 25px;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.glass-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(0, 150, 255, 0.4);
+    margin-bottom: 30px; /* Jarak antar bagian dikunci 30px */
 }
 
 /* --- NAVBAR --- */
@@ -67,7 +59,7 @@ body {
     padding: 12px 30px;
     border-radius: 50px;
     margin-bottom: 40px;
-    position: sticky; /* Navbar nempel di atas saat scroll */
+    position: sticky;
     top: 20px;
     z-index: 100;
 }
@@ -76,7 +68,6 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    /* MENERAPKAN FONT ORBITRON KE LOGO */
     font-family: 'Orbitron', sans-serif;
     font-weight: 700;
     font-size: 1.2rem;
@@ -113,7 +104,6 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-weight: 400;
 }
 
 .nav-links a:hover, .nav-links a.active {
@@ -132,7 +122,6 @@ body {
 }
 
 .subtitle {
-    /* MENERAPKAN FONT ORBITRON */
     font-family: 'Orbitron', sans-serif;
     color: #00d2ff;
     letter-spacing: 4px;
@@ -142,7 +131,6 @@ body {
 }
 
 .main-title {
-    /* MENERAPKAN FONT ORBITRON */
     font-family: 'Orbitron', sans-serif;
     font-size: 4rem;
     font-weight: 700;
@@ -155,7 +143,6 @@ body {
     font-size: 1.3rem;
     color: #94a3b8;
     margin-bottom: 20px;
-    font-weight: 300;
 }
 
 .description {
@@ -208,7 +195,6 @@ body {
     height: 90%;
     border-radius: 50%;
     overflow: hidden;
-    background-color: #fff; /* Agar foto profil terlihat jelas */
 }
 
 .avatar-main img {
@@ -240,7 +226,6 @@ body {
 }
 
 .card-header h2 {
-    /* MENERAPKAN FONT ORBITRON */
     font-family: 'Orbitron', sans-serif;
     font-size: 1.1rem;
     color: #fff;
@@ -255,7 +240,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     gap: 25px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .dynamic-height p {
@@ -283,7 +268,7 @@ body {
     gap: 8px;
 }
 
-/* --- SKILLS CONTAINER --- */
+/* --- SKILLS --- */
 .skills-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -323,11 +308,18 @@ body {
     border-radius: 10px;
 }
 
-/* --- SOCIAL MEDIA BOTTOM SECTION (REVISI LOGO) --- */
+/* --- SOCIAL MEDIA SECTION (FIX TAMPILAN) --- */
+.social-section {
+    display: block; /* Mengunci agar footer dirender utuh */
+    width: 100%;
+    clear: both;
+}
+
 .social-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+    width: 100%;
 }
 
 .social-bar {
@@ -346,7 +338,7 @@ body {
 .social-bar:hover {
     background: rgba(0, 150, 255, 0.08);
     border-color: rgba(0, 150, 255, 0.5);
-    transform: scale(1.02);
+    transform: translateY(-2px);
 }
 
 .soc-left {
@@ -356,17 +348,15 @@ body {
 }
 
 .soc-left i {
-    font-size: 2.2rem; /* Memperbesar ikon */
+    font-size: 2.2rem;
 }
 
-/* WARNA IKON INSTAGRAM GRADIEN */
 .ig-icon {
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* WARNA IKON TIKTOK (PUTIH DENGAN EFEK) */
 .tt-icon {
     color: #fff;
     filter: drop-shadow(2px 0px 0px #fd1c5c) drop-shadow(-2px 0px 0px #1cc7fd);
@@ -387,26 +377,23 @@ body {
     font-size: 1rem;
 }
 
-/* --- RESPONSIF MEDIA QUERIES (MODE HP POTRAIT) --- */
+/* --- RESPONSIVE MEDIA QUERIES (HP POTRAIT) --- */
 @media (max-width: 768px) {
-    body { padding: 15px; }
-    
-    /* Navbar HP lebih sederhana */
+    body { padding: 15px 15px 60px 15px; }
     .navbar { padding: 10px 20px; margin-bottom: 25px; border-radius: 30px; }
-    .nav-links { gap: 10px; }
-    .nav-links a { font-size: 0.8rem; padding: 6px 12px; }
+    .nav-links { gap: 8px; }
+    .nav-links a { font-size: 0.75rem; padding: 6px 12px; }
 
     .hero {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 20px;
     }
-    .hero-avatar { order: -1; margin-bottom: 10px; }
+    .hero-avatar { order: -1; }
     .avatar-glow { width: 220px; height: 220px; }
     .main-title { font-size: 2.8rem; }
-    .tagline { font-size: 1.1rem; }
 
-    .content-grid { grid-template-columns: 1fr; gap: 20px; }
-    .skills-container { grid-template-columns: 1fr; gap: 10px; }
-    .social-grid { grid-template-columns: 1fr; gap: 12px; }
+    .content-grid, .skills-container, .social-grid { 
+        grid-template-columns: 1fr; 
+    }
 }

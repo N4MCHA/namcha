@@ -102,4 +102,45 @@
             </section>
         </main>
 
-        <footer id="social" class="social-section
+        <footer id="social" class="social-section glass-card">
+            <div class="card-header">
+                <i class="fa-solid fa-share-nodes icon-blue"></i>
+                <h2>SOCIAL MEDIA</h2>
+            </div>
+            <div class="social-grid">
+                <a href="https://www.instagram.com/wildandindun__?utm_source=qr&igsh=Y2tlYnhldzVnbGp6" target="_blank" rel="noopener noreferrer" class="social-bar">
+                    <div class="soc-left">
+                        <i class="fa-brands fa-instagram ig-icon"></i>
+                        <div>
+                            <h4>Instagram</h4>
+                            <p>@wildandindun__</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+                </a>
+                <a href="https://www.tiktok.com/@n4mcha4?_r=1&_t=ZS-96dP2MwXE04" target="_blank" rel="noopener noreferrer" class="social-bar">
+                    <div class="soc-left">
+                        <i class="fa-brands fa-tiktok tt-icon"></i>
+                        <div>
+                            <h4>TikTok</h4>
+                            <p>@n4mcha4</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+                </a>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        const navItems = document.querySelectorAll('.nav-links .nav-item');
+        navItems.forEach(item => {
+            item.addEventListener('click', function() {
+                navItems.forEach(nav => nav.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
