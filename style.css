@@ -264,10 +264,10 @@ a, button { touch-action: manipulation; }
 /* --- GAMBAR MAHKOTA HOLOGRAM BERGERAK (DIPERBESAR & ANTI-KETUTUP) --- */
 .hologram-crown {
     position: absolute;
-    top: -150px; /* Diturunkan sedikit agar menutupi dahi/profil */
+    top: -100px; /* Diturunkan sedikit agar menutupi dahi/profil */
     left: 50%;
-    width: 250px; /* Jauh lebih besar dari sebelumnya */
-    margin-left: -125px; /* Setengah dari width agar persis di tengah */
+    width: 300px; /* Jauh lebih besar dari sebelumnya */
+    margin-left: -150px; /* Setengah dari width agar persis di tengah */
     z-index: 999; /* Lapisan paling atas, lebih tinggi dari Navbar */
     pointer-events: none; /* Mencegah mahkota memblokir klik pada tombol Navbar di baliknya */
     
@@ -501,7 +501,7 @@ a, button { touch-action: manipulation; }
     .avatar-glow { width: 220px; height: 220px; box-shadow: 0 0 30px rgba(0, 150, 255, 0.4); }
     
     /* Mahkota HP disesuaikan proporsinya */
-    .hologram-crown { position: absolute; top: -200px; left: 50%; width: 300px; margin-left: -150px; }
+    .hologram-crown { position: absolute; top: -100px; left: 50%; width: 300px; margin-left: -150px; }
     
     .main-title { font-size: 2.8rem; text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); }
     .subtitle { font-size: 0.8rem; letter-spacing: 3px; text-shadow: 0 0 8px rgba(0, 210, 255, 0.6); }
