@@ -264,7 +264,7 @@ a, button { touch-action: manipulation; }
 /* --- GAMBAR MAHKOTA HOLOGRAM BERGERAK (DIPERBESAR & ANTI-KETUTUP) --- */
 .hologram-crown {
     position: absolute;
-    top: -130px; /* Diturunkan sedikit agar menutupi dahi/profil */
+    top: -170px; /* Diturunkan sedikit agar menutupi dahi/profil */
     left: 50%;
     width: 330px; /* Jauh lebih besar dari sebelumnya */
     margin-left: -165px; /* Setengah dari width agar persis di tengah */
