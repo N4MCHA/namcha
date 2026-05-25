@@ -264,14 +264,13 @@ a, button { touch-action: manipulation; }
 /* --- GAMBAR MAHKOTA HOLOGRAM BERGERAK (DIPERBESAR & ANTI-KETUTUP) --- */
 .hologram-crown {
     position: absolute;
-    top: -200px;
+    top: -220px;  /* naikkan kalau masih kurang */
     left: 50%;
-    width: 330px;
-    margin-left: -165px;
+    transform: translateX(-50%);
 
+    width: 330px;
     z-index: 999;
     pointer-events: none;
-    overflow: hidden;
 
     mix-blend-mode: screen;
     opacity: 0.85;
@@ -285,11 +284,11 @@ a, button { touch-action: manipulation; }
 
 /* gerakan mahkota */
 @keyframes crownSway {
-    0%   { transform: translate(-50%, 0) rotate(0deg); }
-    25%  { transform: translate(-48%, -6px) rotate(-1deg); }
-    50%  { transform: translate(-50%, -10px) rotate(0deg); }
-    75%  { transform: translate(-52%, -6px) rotate(1deg); }
-    100% { transform: translate(-50%, 0) rotate(0deg); }
+    0%   { transform: translateX(-50%) translate(0, 0) rotate(0deg); }
+    25%  { transform: translateX(-50%) translate(-6px, -6px) rotate(-1deg); }
+    50%  { transform: translateX(-50%) translate(0, -10px) rotate(0deg); }
+    75%  { transform: translateX(-50%) translate(6px, -6px) rotate(1deg); }
+    100% { transform: translateX(-50%) translate(0, 0) rotate(0deg); }
 }
 
 /* shimmer jalan cahaya */
