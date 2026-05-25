@@ -275,16 +275,9 @@ a, button { touch-action: manipulation; }
     filter: hue-rotate(160deg) brightness(1.5) contrast(1.2) drop-shadow(0 0 15px rgba(0, 210, 255, 0.8));
     opacity: 0.85;
     
-    animation: 
-        crownFloat 4s ease-in-out infinite;
-    transform-origin: center bottom;
+    animation: none;
+    transform: rotate(0deg);
 }
-
-@keyframes crownFloat {
-    0%, 100% { transform: translateX(0) rotate(-5deg); }
-    50% { transform: translateX(-8px) rotate(2deg); }
-}
-
 .avatar-main {
     width: 90%;
     height: 90%;
@@ -482,11 +475,6 @@ a, button { touch-action: manipulation; }
 .typed-cursor {
     color: #00e5ff;
     text-shadow: 0 0 6px #00e5ff, 0 0 12px #00e5ff, 0 0 24px #00d2ff;
-    animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
-    50% { opacity: 0; }
 }
 /* =========================================
    RESPONSIVE MEDIA QUERIES (MODE HP)
