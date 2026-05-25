@@ -266,7 +266,7 @@ a, button { touch-action: manipulation; }
     position: absolute;
     top: -50px; /* Diturunkan sedikit agar menutupi dahi/profil */
     left: 50%;
-    width: 150px; /* Jauh lebih besar dari sebelumnya */
+    width: 350px; /* Jauh lebih besar dari sebelumnya */
     margin-left: -75px; /* Setengah dari width agar persis di tengah */
     z-index: 999; /* Lapisan paling atas, lebih tinggi dari Navbar */
     pointer-events: none; /* Mencegah mahkota memblokir klik pada tombol Navbar di baliknya */
