@@ -263,43 +263,21 @@ a, button { touch-action: manipulation; }
 
 /* --- GAMBAR MAHKOTA HOLOGRAM BERGERAK (DIPERBESAR & ANTI-KETUTUP) --- */
 /* ===== HERO AVATAR WRAPPER ===== */
-.hero-avatar {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* ===== MAHKOTA FINAL ===== */
 .hologram-crown {
-    position: absolute;
-    left: 50%;
-    top: -25%;
-    transform: translateX(-50%);
-
-    width: min(300px, 80%);
-    z-index: 999;
-    pointer-events: none;
-
-    mix-blend-mode: screen;
-    opacity: 0.85;
-
-    filter: hue-rotate(160deg) brightness(1.5) contrast(1.2)
-            drop-shadow(0 0 15px rgba(0, 210, 255, 0.8));
-
-    animation: crownFloat 5s ease-in-out infinite;
-    will-change: transform;
+   position: absolute;
+   top: -200px;
+   left: 50%;
+   width: 330px;
+   margin-left: -165px;
+   z-index: 999;
+   mix-blend-mode: screen;  
+   filter: hue-rotate(160deg) brightness(1.5) contrast(1.2) drop-shadow(0 0 15px rgba(0, 210, 255, 0.8));
+   
+   opacity: 0.85;
+   
+   animation: none;  
+   transform: rotate(0deg);
 }
-
-/* ===== GERAK HALUS KANAN-KIRI ===== */
-@keyframes crownFloat {
-    0%   { transform: translateX(-50%) translate(0px, 0px); }
-    25%  { transform: translateX(-50%) translate(5px, -4px); }
-    50%  { transform: translateX(-50%) translate(0px, -8px); }
-    75%  { transform: translateX(-50%) translate(-5px, -4px); }
-    100% { transform: translateX(-50%) translate(0px, 0px); }
-}
-
 /* ===== SHIMMER CAHAYA JALAN ===== */
 .hologram-crown::after {
     content: "";
@@ -316,30 +294,12 @@ a, button { touch-action: manipulation; }
         rgba(0,210,255,0.25),
         transparent
     );
-
     transform: skewX(-20deg);
     animation: crownShimmer 3.5s linear infinite;
 }
-
 @keyframes crownShimmer {
     0% { left: -75%; }
     100% { left: 125%; }
-}
-
-/* ===== MODE HP (PORTRAIT) ===== */
-@media (max-width: 768px) {
-    .hologram-crown {
-        top: -22%;
-        width: min(240px, 70%);
-    }
-}
-
-/* ===== MODE LANDSCAPE ===== */
-@media (orientation: landscape) and (max-height: 500px) {
-    .hologram-crown {
-        top: -28%;
-        width: 200px;
-    }
 }
 .avatar-main {
     width: 90%;
