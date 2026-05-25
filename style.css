@@ -262,7 +262,6 @@ a, button { touch-action: manipulation; }
 }
 
 /* --- GAMBAR MAHKOTA HOLOGRAM BERGERAK (DIPERBESAR & ANTI-KETUTUP) --- */
-/* ===== HERO AVATAR WRAPPER ===== */
 .hologram-crown {
    position: absolute;
    top: -200px;
@@ -270,12 +269,13 @@ a, button { touch-action: manipulation; }
    width: 330px;
    margin-left: -165px;
    z-index: 999;
-   mix-blend-mode: screen;  
+   pointer-events: none;
+   mix-blend-mode: screen;
    filter: hue-rotate(160deg) brightness(1.5) contrast(1.2) drop-shadow(0 0 15px rgba(0, 210, 255, 0.8));
    
    opacity: 0.85;
    
-   animation: none;  
+   animation: none;
    transform: rotate(0deg);
 }
 
