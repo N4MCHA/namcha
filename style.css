@@ -266,8 +266,8 @@ a, button { touch-action: manipulation; }
     position: absolute;
     top: -130px; /* Diturunkan sedikit agar menutupi dahi/profil */
     left: 50%;
-    width: 300px; /* Jauh lebih besar dari sebelumnya */
-    margin-left: -150px; /* Setengah dari width agar persis di tengah */
+    width: 330px; /* Jauh lebih besar dari sebelumnya */
+    margin-left: -165px; /* Setengah dari width agar persis di tengah */
     z-index: 999; /* Lapisan paling atas, lebih tinggi dari Navbar */
     pointer-events: none; /* Mencegah mahkota memblokir klik pada tombol Navbar di baliknya */
     
@@ -276,20 +276,13 @@ a, button { touch-action: manipulation; }
     opacity: 0.85;
     
     animation: 
-        crownFloat 4s ease-in-out infinite,
-        hologramFlicker 2s linear infinite;
+        crownFloat 4s ease-in-out infinite;
     transform-origin: center bottom;
 }
 
 @keyframes crownFloat {
     0%, 100% { transform: translateY(0) rotate(-5deg); }
-    50% { transform: translateY(-15px) rotate(5deg); }
-}
-
-@keyframes hologramFlicker {
-    0%, 100% { opacity: 0.85; }
-    5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% { opacity: 0.6; }
-    10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% { opacity: 1; }
+    50% { transform: translateY(-8px) rotate(2deg); }
 }
 
 .avatar-main {
@@ -501,7 +494,7 @@ a, button { touch-action: manipulation; }
     .avatar-glow { width: 220px; height: 220px; box-shadow: 0 0 30px rgba(0, 150, 255, 0.4); }
     
     /* Mahkota HP disesuaikan proporsinya */
-    .hologram-crown { position: absolute; top: -130px; left: 50%; width: 300px; margin-left: -150px; }
+    .hologram-crown { position: absolute; top: -130px; left: 50%; width: 330px; margin-left: -165px; }
     
     .main-title { font-size: 2.8rem; text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); }
     .subtitle { font-size: 0.8rem; letter-spacing: 3px; text-shadow: 0 0 8px rgba(0, 210, 255, 0.6); }
