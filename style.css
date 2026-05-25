@@ -281,8 +281,8 @@ a, button { touch-action: manipulation; }
 }
 
 @keyframes crownFloat {
-    0%, 100% { transform: translateY(0) rotate(-5deg); }
-    50% { transform: translateY(-8px) rotate(2deg); }
+    0%, 100% { transform: translateX(0) rotate(-5deg); }
+    50% { transform: translateX(-8px) rotate(2deg); }
 }
 
 .avatar-main {
@@ -470,8 +470,19 @@ a, button { touch-action: manipulation; }
     opacity: 1;
     transform: translateY(0);
 }
-
-
+#typing {
+    color: #00e5ff;
+    font-weight: 600;
+    text-shadow:
+        0 0 6px #00e5ff,
+        0 0 12px #00e5ff,
+        0 0 24px #00d2ff,
+        0 0 40px rgba(0, 210, 255, 0.6);
+}
+.typed-cursor {
+    color: #00e5ff;
+    text-shadow: 0 0 6px #00e5ff, 0 0 12px #00e5ff;
+}
 /* =========================================
    RESPONSIVE MEDIA QUERIES (MODE HP)
    ========================================= */
