@@ -481,7 +481,12 @@ a, button { touch-action: manipulation; }
 }
 .typed-cursor {
     color: #00e5ff;
-    text-shadow: 0 0 6px #00e5ff, 0 0 12px #00e5ff;
+    text-shadow: 0 0 6px #00e5ff, 0 0 12px #00e5ff, 0 0 24px #00d2ff;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
 }
 /* =========================================
    RESPONSIVE MEDIA QUERIES (MODE HP)
