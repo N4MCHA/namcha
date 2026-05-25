@@ -264,7 +264,7 @@ a, button { touch-action: manipulation; }
 /* --- GAMBAR MAHKOTA HOLOGRAM BERGERAK (DIPERBESAR & ANTI-KETUTUP) --- */
 .hologram-crown {
     position: absolute;
-    top: -170px; /* Diturunkan sedikit agar menutupi dahi/profil */
+    top: -200px; /* Diturunkan sedikit agar menutupi dahi/profil */
     left: 50%;
     width: 330px; /* Jauh lebih besar dari sebelumnya */
     margin-left: -165px; /* Setengah dari width agar persis di tengah */
@@ -498,7 +498,7 @@ a, button { touch-action: manipulation; }
     .avatar-glow { width: 220px; height: 220px; box-shadow: 0 0 30px rgba(0, 150, 255, 0.4); }
     
     /* Mahkota HP disesuaikan proporsinya */
-    .hologram-crown { position: absolute; top: -150px; left: 50%; width: 330px; margin-left: -165px; }
+    .hologram-crown { position: absolute; top: -200px; left: 50%; width: 330px; margin-left: -165px; }
     
     .main-title { font-size: 2.8rem; text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); }
     .subtitle { font-size: 0.8rem; letter-spacing: 3px; text-shadow: 0 0 8px rgba(0, 210, 255, 0.6); }
