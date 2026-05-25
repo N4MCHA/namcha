@@ -278,29 +278,7 @@ a, button { touch-action: manipulation; }
    animation: none;  
    transform: rotate(0deg);
 }
-/* ===== SHIMMER CAHAYA JALAN ===== */
-.hologram-crown::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -75%;
-    width: 50%;
-    height: 100%;
 
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,0.35),
-        rgba(0,210,255,0.25),
-        transparent
-    );
-    transform: skewX(-20deg);
-    animation: crownShimmer 3.5s linear infinite;
-}
-@keyframes crownShimmer {
-    0% { left: -75%; }
-    100% { left: 125%; }
-}
 .avatar-main {
     width: 90%;
     height: 90%;
@@ -319,7 +297,6 @@ a, button { touch-action: manipulation; }
     border-radius: 50%;
     animation: rotateOrbit 20s linear infinite;
 }
-
 @keyframes rotateOrbit {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
